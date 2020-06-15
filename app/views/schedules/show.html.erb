@@ -68,7 +68,7 @@
             <td class="border_tl">
             <% @answers_tabun&.each do |answer| %>
                 <%= answer.name %>：<%= answer.comment %>
-                <%= link_to('×', answer, { method: :delete, data: { confirm: '本当に削除してもよろしいですか？' }, class: 'btn-border2' }) %><br>
+                <%= link_to('×', answer, { method: :delete, data: { confirm: '本当に削除してもよろしいですか？-' }, class: 'btn-border2' }) %><br>
             <% end %>
             </td>
         </tr>
