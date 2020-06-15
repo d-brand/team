@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ymd: 2020-06-01
+  start: 2020-06-01 14:48:33
+  end: 2020-06-01 14:48:33
+  place: MyString
+  addcomment: MyText
+
+two:
+  ymd: 2020-06-01
+  start: 2020-06-01 14:48:33
+  end: 2020-06-01 14:48:33
+  place: MyString
+  addcomment: MyText
