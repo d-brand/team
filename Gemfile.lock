@@ -78,7 +78,10 @@ GEM
     crass (1.0.6)
     erubi (1.9.0)
     ffi (1.12.2)
+<<<<<<< HEAD
     ffi (1.12.2-java)
+=======
+>>>>>>> origin/dependabot/bundler/websocket-extensions-0.1.5
     ffi (1.12.2-x64-mingw32)
     ffi (1.12.2-x86-mingw32)
     globalid (0.4.2)
@@ -100,10 +103,14 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.1)
     msgpack (1.3.3)
+<<<<<<< HEAD
     msgpack (1.3.3-java)
+=======
+>>>>>>> origin/dependabot/bundler/websocket-extensions-0.1.5
     msgpack (1.3.3-x64-mingw32)
     msgpack (1.3.3-x86-mingw32)
     nio4r (2.5.2)
+<<<<<<< HEAD
     nio4r (2.5.2-java)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
@@ -112,6 +119,12 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+=======
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.9-x64-mingw32)
+      mini_portile2 (~> 2.4.0)
+>>>>>>> origin/dependabot/bundler/websocket-extensions-0.1.5
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
@@ -203,15 +216,23 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
+<<<<<<< HEAD
     websocket-driver (0.7.2-java)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
+=======
+    websocket-extensions (0.1.5)
+>>>>>>> origin/dependabot/bundler/websocket-extensions-0.1.5
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.3.0)
 
 PLATFORMS
+<<<<<<< HEAD
   java
+=======
+  ruby
+>>>>>>> origin/dependabot/bundler/websocket-extensions-0.1.5
   x64-mingw32
   x86-mingw32
   x86-mswin32
