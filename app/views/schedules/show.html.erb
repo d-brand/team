@@ -35,7 +35,7 @@
             <td class="border_t" rowspan="2">            
                 <% weeks = ["月","火","水","木","金","土","日"] %>
                 <% index = schedule.ymd.strftime("%u").to_i %>
-                <%= link_to schedule.ymd.strftime("%Y年%m月%d日(#{weeks[index - 1]})"), schedule %><br><%= schedule.start.strftime('%H:%M') %> ～ <%= schedule.end.strftime('%H:%M') %><br><%= schedule.place %>
+                <%= link_to schedule.ymd.strftime("%Y年%m月%d日(#{weeks[index - 1]})"), schedule.start.strftime('%H:%M'),schedule.end.strftime('%H:%M'), schedule %><br><%= schedule.place %>
             </td>
             <td class="border_tl" colspan="4"><%= simple_format schedule.addcomment %></td>
             <tr>
