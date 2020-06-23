@@ -5,5 +5,5 @@ class Schedule < ApplicationRecord
 
     # default_scope -> { order(ymd: :asc) }
 
-    scorp :uketsukechu, -> { where("schedules.ymd > ?", Time.current.yesterday) }
+    scope :uketsukechu, -> { where("schedules.ymd > ?", Time.current.yesterday) }
 end
