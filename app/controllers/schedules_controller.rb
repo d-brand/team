@@ -29,7 +29,12 @@ class SchedulesController < ApplicationController
     @answers_mitei = Answer.mitei
     @answers_kesseki = Answer.kesseki
 
-    schedule = Schedule.find(params[:id])
+    if params[:id]
+      schedule = Schedule.find(params[:id])
+    else
+      schedule = Schedule.uketsukechu.order(ymd: :asc).first
+    end
+
     @answers_all = schedule.answer
     @answers_sanka = schedule.answer.sanka
     @answers_tabun = schedule.answer.tabun
@@ -38,14 +43,6 @@ class SchedulesController < ApplicationController
 
     @answer = Answer.new
     @answer.schedule_id = params[:id]
-
-    @options = { join: @answers_sanka&.count, maybe: @answers_tabun&.count, pending: @answers_mitei&.count, absence: @answers_kesseki&.count }
-
-    @total = [@answers_sanka&.count, @answers_tabun&.count, @answers_mitei&.count, @answers_kesseki&.count]
-    @join = @total[0]
-    @maybe = @total[1]
-    @pending = @total[2]
-    @absence = @total[3]
 
     @caution = '※チーム毎でサイト管理している為、パスワードを設けておりません。チーム幹事のみ編集してください。'
   end
@@ -107,7 +104,12 @@ class SchedulesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
-      @schedule = Schedule.find(params[:id])
+      @schedule = if params[:id].blank?
+        Schedule.uketsukechu.first
+      else
+        Schedule.find(params[:id])
+      end
+      # @schedule = Schedule.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
