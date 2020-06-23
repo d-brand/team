@@ -15,6 +15,7 @@ class SchedulesController < ApplicationController
     @answers_kesseki = Answer.kesseki
     @answer = Answer.new
     @answer.schedule_id = params[:id]
+
     @caution = '※チーム毎でサイト管理している為、パスワードを設けておりません。チーム幹事のみ編集してください。'
     
   end
@@ -29,7 +30,12 @@ class SchedulesController < ApplicationController
     @answers_mitei = Answer.mitei
     @answers_kesseki = Answer.kesseki
 
-    schedule = Schedule.find(params[:id])
+    if params[:id]
+      schedule = Schedule.find(params[:id])
+    else
+      schedule = Schedule.uketsukechu.order(ymd: asc).first
+    end
+
     @answers_all = schedule.answer
     @answers_sanka = schedule.answer.sanka
     @answers_tabun = schedule.answer.tabun

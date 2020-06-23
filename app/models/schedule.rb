@@ -3,5 +3,7 @@ class Schedule < ApplicationRecord
     validates :place, presence: true
     validates :addcomment, presence: true
 
-    default_scope -> { order(ymd: :asc) }
+    # default_scope -> { order(ymd: :asc) }
+
+    scorp :uketsukechu, -> { where("schedules.ymd > ?", Time.current.yesterday) }
 end
