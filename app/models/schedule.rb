@@ -1,5 +1,5 @@
 class Schedule < ApplicationRecord
-    has_many :answer
+    has_many :answer, dependent: :destroy
     validates :place, presence: true
     validates :addcomment, presence: true
 
