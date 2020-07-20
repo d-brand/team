@@ -54,6 +54,7 @@ class SchedulesController < ApplicationController
   
   # GET /schedules/new
   def new
+    @schedules = Schedule.where("schedules.ymd > ?", Time.current.yesterday).reorder(:ymd)
     @schedules = Schedule.all
     @schedule = Schedule.new
   end
@@ -105,12 +106,12 @@ class SchedulesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_schedule
-      # @schedule = Schedule.find(params[:id])
       @schedule = if params[:id].blank?
         Schedule.uketsukechu.first
       else
         Schedule.find(params[:id])
       end
+      # @schedule = Schedule.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
