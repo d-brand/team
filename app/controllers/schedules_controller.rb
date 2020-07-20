@@ -55,9 +55,9 @@ class SchedulesController < ApplicationController
   # GET /schedules/new
   def new
     @schedules = Schedule.where("schedules.ymd > ?", Time.current.yesterday).reorder(:ymd)
-    @schedules = Schedule.all.order(ymd: "ASC")
     @schedules = Schedule.all
     @schedule = Schedule.new
+    @schedules = Schedule.all.order(ymd: "ASC")
   end
 
   # GET /schedules/1/edit
