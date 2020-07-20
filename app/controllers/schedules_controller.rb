@@ -53,6 +53,7 @@ class SchedulesController < ApplicationController
   
   # GET /schedules/new
   def new
+    @schedules = Schedule.where("schedules.ymd > ?", Time.current.yesterday).reorder(:ymd)
     @schedules = Schedule.all
     @schedule = Schedule.new
   end
